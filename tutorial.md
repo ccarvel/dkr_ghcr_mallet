@@ -78,15 +78,22 @@ cd to your new_local_version_of_repo
 ```docker build -t ghcr.io/GHUSERNAME/ghcr_test:latest .```  
 _replace GHUSERNAME with your Github username_
 _latest can also be replaced with a version number of your choice_  
+example:   
+```docker build -t ghcr.io/ccarvel/ghcr_test:1.9```
 
 - **Step 6: Check Image ID, Push to Github**
 Let's find the ID for the mallet image we just built in terminal:
 ```docker images```  
 you should see a list of at least one IMAGE similar to:  
 ```
-REPOSITORY               TAG       IMAGE ID       CREATED         SIZE
-mallet                   latest    94c9663abfb7   3 minutes ago   824MB
+REPOSITORY                  TAG       IMAGE ID       CREATED         SIZE
+ghcr.io/ccarvel/ghcr_test   1.9       94c9663abfb7   47 minutes ago   824MB
 ```
+   
 Github's documentation on pushing your new image/package is:  
-```docker push ghcr.io/NAMESPACE/IMAGE_NAME:latest```
-where NAMESPACE is your username and IMAGE_NAME
+```docker push ghcr.io/NAMESPACE/IMAGE_NAME:TAG```   
+where NAMESPACE is your username and IMAGE_NAME:TAG uses the string after the username plus :TAG (the TAG is usually latest by default if you did not specify as we did above...   
+for the above example this would be:   
+```docker push ghcr.io/ccarvel/ghcr_test:1.9```   
+
+
