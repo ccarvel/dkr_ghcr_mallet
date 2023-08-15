@@ -1,5 +1,4 @@
-# GitOps GitHub Container Registry
-## (Docker edition)
+# GitOps GitHub Container Registry (Docker edition)
 
 - **Step 1: Create a new repository [https://github.com/new]**  
 For this tutorial, let's name the repository “dkr\_ghcr\_mallet”  
@@ -63,6 +62,7 @@ The current permalink for this is: [https://github.com/settings/tokens/new]:
     - Select the delete:packages scope to delete container images.  
     - Create your PAT, and copy the string Github created.
 
+**NOW WE USE TERMINAL, MOSTLY**  
 - **Step 4: Add your token to your Terminal Environment, Authenticate to the Github Container Registry**  
 Open Terminal, and enter:
 ```export CR_PAT=token you copied goes here```  
@@ -70,4 +70,9 @@ Then authenticate to the Github Container Registry
 ```echo $CR_PAT | docker login ghcr.io -u USERNAME --password-stdin```  
 _be sure you replace USERNAME above with your Github username_
 
-- **Step 5: Tag
+- **Step 5: Clone the Repository, Build the Dockerfile**
+Start up Docker Desktop (Mac, Windows, Linux Desktop systems) or Docker Engine (primarily Linux terminal servers)   
+Clone the repository:
+git clone url_to_your_repo  
+cd to your new_local_version_of_repo  
+```docker build -t mallet .```
