@@ -96,4 +96,6 @@ where NAMESPACE is your username and IMAGE_NAME:TAG uses the string after the us
 for the above example this would be:   
 ```docker push ghcr.io/ccarvel/ghcr_test:1.9```   
 
+**NOW FOLLOW THE TUTORIAL TO CONNECT YOUR REPO TO THE PACKAGE**   
+https://docs.github.com/en/packages/learn-github-packages/connecting-a-repository-to-a-package
 
