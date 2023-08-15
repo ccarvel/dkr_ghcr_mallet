@@ -64,15 +64,29 @@ The current permalink for this is: [https://github.com/settings/tokens/new]:
 
 **NOW WE USE TERMINAL, MOSTLY**  
 - **Step 4: Add your token to your Terminal Environment, Authenticate to the Github Container Registry**  
-Open Terminal, and enter:
+Open Terminal, and enter:  
 ```export CR_PAT=token you copied goes here```  
 Then authenticate to the Github Container Registry  
 ```echo $CR_PAT | docker login ghcr.io -u USERNAME --password-stdin```  
 _be sure you replace USERNAME above with your Github username_
 
-- **Step 5: Clone the Repository, Build the Dockerfile**
+- **Step 5: Clone the Repository, Build and Tag**
 Start up Docker Desktop (Mac, Windows, Linux Desktop systems) or Docker Engine (primarily Linux terminal servers)   
 Clone the repository:
 git clone url_to_your_repo  
 cd to your new_local_version_of_repo  
-```docker build -t mallet .```
+```docker build -t ghcr.io/GHUSERNAME/ghcr_test:latest .```  
+_replace GHUSERNAME with your Github username_
+_latest can also be replaced with a version number of your choice_  
+
+- **Step 6: Check Image ID, Push to Github**
+Let's find the ID for the mallet image we just built in terminal:
+```docker images```  
+you should see a list of at least one IMAGE similar to:  
+```
+REPOSITORY               TAG       IMAGE ID       CREATED         SIZE
+mallet                   latest    94c9663abfb7   3 minutes ago   824MB
+```
+Github's documentation on pushing your new image/package is:  
+```docker push ghcr.io/NAMESPACE/IMAGE_NAME:latest```
+where NAMESPACE is your username and IMAGE_NAME
