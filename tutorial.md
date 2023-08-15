@@ -95,7 +95,7 @@ Github's documentation on pushing your new image/package is:
 where NAMESPACE is your username and IMAGE_NAME:TAG uses the string after the username plus :TAG (the TAG is usually latest by default if you did not specify as we did above...   
 for the above example this would be:   
 ```docker push ghcr.io/ccarvel/ghcr_test:1.9```   
-
+   
 **NOW FOLLOW THE TUTORIAL TO CONNECT YOUR REPO TO THE PACKAGE**   
 https://docs.github.com/en/packages/learn-github-packages/connecting-a-repository-to-a-package
 
